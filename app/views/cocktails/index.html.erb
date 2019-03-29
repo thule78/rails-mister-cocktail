@@ -13,8 +13,11 @@
         <h2 class="mt-4">Cockttail list (<%= @cocktails.count %>)</h2>
         <div class="row mt-3">
           <% @cocktails.each do |cocktail| %>
-          <div class="col-sm-3">
-            <div class="card mt-4">
+          <div class="col-sm-4">
+            <div class="card mt-3">
+              <%#if cocktail.photo.present?%>
+              <%= cl_image_tag cocktail.photo, height: 200, width: 250, crop: :fill, class: "card-img-top" %>
+              <%#end%>
               <div class="card-body">
               <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail)%></h5>
               </div>
